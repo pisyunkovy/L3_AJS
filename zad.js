@@ -58,7 +58,6 @@ async function getPostsAsync() {
     }
 }
 
-// async/await для /comments (сортировка по имени автора)
 async function getCommentsAsync() {
     try {
         const response = await fetch('https://jsonplaceholder.typicode.com/comments');
