@@ -1,6 +1,3 @@
-// --- COLLABACKS ---
-
-// Получить /posts и отсортировать по убыванию длины title
 function getPostsWithCallback(callback) {
     fetch('https://jsonplaceholder.typicode.com/posts')
         .then(response => response.json())
@@ -10,8 +7,6 @@ function getPostsWithCallback(callback) {
         })
         .catch(err => console.error('Ошибка при получении постов:', err));
 }
-
-// Получить /comments и отсортировать по имени автора (name)
 function getCommentsWithCallback(callback) {
     fetch('https://jsonplaceholder.typicode.com/comments')
         .then(response => response.json())
@@ -21,11 +16,6 @@ function getCommentsWithCallback(callback) {
         })
         .catch(err => console.error('Ошибка при получении комментариев:', err));
 }
-
-
-// --- PROMISES ---
-
-// Получить /users и оставить только поля id, name, username, email, phone
 function getUsersWithPromises() {
     return fetch('https://jsonplaceholder.typicode.com/users')
         .then(response => response.json())
@@ -34,19 +24,12 @@ function getUsersWithPromises() {
         })))
         .catch(err => console.error('Ошибка при получении пользователей:', err));
 }
-
-// Получить /todos и отфильтровать по completed = falsy
 function getTodosWithPromises() {
     return fetch('https://jsonplaceholder.typicode.com/todos')
         .then(response => response.json())
         .then(todos => todos.filter(todo => !todo.completed))
         .catch(err => console.error('Ошибка при получении задач:', err));
 }
-
-
-// --- ASYNC/AWAIT ---
-
-// async/await для /posts (сортировка по убыванию длины title)
 async function getPostsAsync() {
     try {
         const response = await fetch('https://jsonplaceholder.typicode.com/posts');
@@ -57,7 +40,6 @@ async function getPostsAsync() {
         console.error('Ошибка при получении постов async:', err);
     }
 }
-
 async function getCommentsAsync() {
     try {
         const response = await fetch('https://jsonplaceholder.typicode.com/comments');
